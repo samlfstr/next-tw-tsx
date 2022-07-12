@@ -43,7 +43,7 @@ const person: {
   const fn:Function = (id:string|number) => {
     return id.toString();
   }
-   /*        4 FUNCTION DEFINITIONS          */
+   /*          FUNCTION DEFINITIONS          */
   // Function definition with return type void.
   function fn(id:string | number) : void {
     console.log(id);
@@ -81,6 +81,42 @@ const person: {
       return "The return type is a string";
     }
   }
+  // Function with two pareters.
+  const fn = (messageId:string|number, userId:string|number) =>{
+  if (messageId === userId){
+    return  123;
+  }
+  return "sth else";
+  }
+  // Function that uses instanceof operator.
+  const fn2 = (date:string|Date)=> {
+    if(date instanceof Date){
+      return date.toISOString();
+    }
+  }
+  // Arrow function that uses isArray 
+  const fn = (full_name: string | string[]) => {
+    if (Array.isArray(full_name)) {
+      return full_name.join(' ');
+    }
+  }
+  // Exclamation point tells that a function's return type can not null. 
+  const button = document.querySelector('.btn')!;
+  //  define a User type with the type keyword :
+  type User = {firstname: string, lastname: string};
+  // Then use it any where I want to define a user :
+  const user:User = { firstname: "Sameul", lastname: "Foster" }
+  // Make a function that takes any type of value and returns any type of value. 
+function user <UserType>(var:UserType):UserType{
+  // Narrowing
+  if(var === "number"){
+    // It's probably the user ID do sth
+  }else if(var === "string"){
+    // It's name or address do sth
+  }else if(Array.isArray(var)){
+     // Deconstruct the array and do sth
+  }
+}
 `;
 
   return (
