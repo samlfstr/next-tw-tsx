@@ -1,4 +1,7 @@
 /* //!STARTERCONF Remove this file after copying your desired color, this is a large file you should remove it. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .rose {
   --tw-color-primary-50: 255 241 242;

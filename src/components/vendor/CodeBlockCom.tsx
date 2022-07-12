@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { CodeBlock } from 'react-code-blocks';
 
 export default function CodeBlockCom({
@@ -7,10 +8,8 @@ export default function CodeBlockCom({
   code: string;
   language: string;
 }) {
-  // Here write your code
-
   return (
-    <div className='grid h-screen place-items-center'>
+    <div className='mt-10 grid h-auto place-items-center'>
       <CodeBlock text={code} language={language} />
     </div>
   );
