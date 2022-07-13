@@ -1,24 +1,8 @@
+import Link from 'next/link';
 import * as React from 'react';
 
 import Layout from '@/components/layout/Layout';
-import ArrowLink from '@/components/links/ArrowLink';
-import ButtonLink from '@/components/links/ButtonLink';
-import UnderlineLink from '@/components/links/UnderlineLink';
-import UnstyledLink from '@/components/links/UnstyledLink';
 import Seo from '@/components/Seo';
-
-/**
- * SVGR Support
- * Caveat: No React Props Type.
- *
- * You can override the next-env if the type is important to you
- * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
- */
-import Vercel from '~/svg/Vercel.svg';
-
-// !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
-// Before you begin editing, follow all comments with `STARTERCONF`,
-// to customize the default configuration.
 
 export default function HomePage() {
   return (
@@ -27,44 +11,187 @@ export default function HomePage() {
       <Seo />
 
       <main>
-        <section className='bg-white'>
-          <div className='layout flex min-h-screen flex-col items-center justify-center text-center'>
-            <Vercel className='text-5xl' />
-            <h1 className='mt-4'>
-              Next.js + Tailwind CSS + TypeScript Starter
-            </h1>
-            <p className='mt-2 text-sm text-gray-800'>
-              A starter for Next.js, Tailwind CSS, and TypeScript with Absolute
-              Import, Seo, Link component, pre-configured with Husky{' '}
-            </p>
-            <p className='mt-2 text-sm text-gray-700'>
-              <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
-                See the repository
-              </ArrowLink>
-            </p>
-
-            <ButtonLink className='mt-6' href='/components' variant='light'>
-              See all components
-            </ButtonLink>
-            <UnstyledLink
-              href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter'
-              className='mt-4'
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                width='92'
-                height='32'
-                src='https://vercel.com/button'
-                alt='Deploy with Vercel'
-              />
-            </UnstyledLink>
-
-            <footer className='absolute bottom-2 text-gray-700'>
-              © {new Date().getFullYear()} By{' '}
-              <UnderlineLink href='https://theodorusclarence.com?ref=tsnextstarter'>
-                Theodorus Clarence
-              </UnderlineLink>
-            </footer>
+        <section className='body-font my-5 flex h-screen items-center text-gray-600'>
+          <div className='container mx-auto px-5 py-0'>
+            <div className='-m-4 flex flex-wrap'>
+              <div className='p-4 md:w-1/3'>
+                <div className='flex h-full flex-col rounded-lg bg-gray-100 p-8'>
+                  <div className='mb-3 flex items-center'>
+                    <div
+                      className='
+                               sm:w-15 sm:h-15 h-15
+                               w-15
+                               order-first
+                               mr-3
+                               inline-flex
+                               inline-flex
+                               h-8
+                               w-8
+                               flex-shrink-0 flex-shrink-0
+                               animate-bounce items-center
+                               items-center
+                               justify-center justify-center rounded-full
+                               rounded-full
+                               bg-indigo-500
+                               bg-indigo-700
+                               text-white
+                               text-white
+                               sm:order-none
+                               sm:ml-1
+                               '
+                    >
+                      <svg
+                        fill='none'
+                        stroke='currentColor'
+                        className='h-5 w-5'
+                        viewBox='0 0 24 24'
+                      >
+                        <path d='M22 12h-4l-3 9L9 3l-3 9H2'></path>
+                      </svg>
+                    </div>
+                    <h2 className='title-font mb-2 text-lg font-medium text-gray-900'>
+                      Type script
+                    </h2>
+                  </div>
+                  <div className='flex-grow'>
+                    <p className='text-base leading-relaxed'>
+                      All typescript function types and structure
+                    </p>
+                    <Link href='./start'>
+                      <a className='mt-3 inline-flex items-center text-indigo-500'>
+                        Example
+                        <svg
+                          fill='none'
+                          stroke='currentColor'
+                          className='ml-2 ml-2 h-4 h-4 w-4 w-4 animate-ping'
+                          viewBox='0 0 24 24'
+                        >
+                          <path d='M5 12h14M12 5l7 7-7 7'></path>
+                        </svg>
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className='p-4 md:w-1/3'>
+                <div className='flex h-full flex-col rounded-lg bg-gray-100 p-8'>
+                  <div className='mb-3 flex items-center'>
+                    <div
+                      className='
+                               sm:w-15 sm:h-15 h-15
+                               w-15
+                               order-first
+                               mr-3
+                               inline-flex
+                               inline-flex
+                               h-8
+                               w-8
+                               flex-shrink-0 flex-shrink-0
+                               animate-bounce items-center
+                               items-center
+                               justify-center justify-center rounded-full
+                               rounded-full
+                               bg-indigo-500
+                               bg-indigo-700
+                               text-white
+                               text-white
+                               sm:order-none
+                               sm:ml-1
+                               '
+                    >
+                      <svg
+                        fill='none'
+                        stroke='currentColor'
+                        className='h-5 w-5'
+                        viewBox='0 0 24 24'
+                      >
+                        <path d='M22 12h-4l-3 9L9 3l-3 9H2'></path>
+                      </svg>
+                    </div>
+                    <h2 className='title-font mb-2 text-lg font-medium text-gray-900'>
+                      Increment, Decrement
+                    </h2>
+                  </div>
+                  <div className='flex-grow'>
+                    <p className='text-base leading-relaxed'>
+                      Increment & Decrement
+                    </p>
+                    <Link href='./increment'>
+                      <a className='mt-3 inline-flex items-center text-indigo-500'>
+                        Example
+                        <svg
+                          fill='none'
+                          stroke='currentColor'
+                          className='ml-2 ml-2 h-4 h-4 w-4 w-4 animate-ping'
+                          viewBox='0 0 24 24'
+                        >
+                          <path d='M5 12h14M12 5l7 7-7 7'></path>
+                        </svg>
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className='p-4 md:w-1/3'>
+                <div className='flex h-full flex-col rounded-lg bg-gray-100 p-8'>
+                  <div className='mb-3 flex items-center'>
+                    <div
+                      className='
+                               sm:w-15 sm:h-15 h-15
+                               w-15
+                               order-first
+                               mr-3
+                               inline-flex
+                               inline-flex
+                               h-8
+                               w-8
+                               flex-shrink-0 flex-shrink-0
+                               animate-bounce items-center
+                               items-center
+                               justify-center justify-center rounded-full
+                               rounded-full
+                               bg-indigo-500
+                               bg-indigo-700
+                               text-white
+                               text-white
+                               sm:order-none
+                               sm:ml-1
+                               '
+                    >
+                      <svg
+                        fill='none'
+                        stroke='currentColor'
+                        className='h-5 w-5'
+                        viewBox='0 0 24 24'
+                      >
+                        <path d='M22 12h-4l-3 9L9 3l-3 9H2'></path>
+                      </svg>
+                    </div>
+                    <h2 className='title-font mb-2 text-lg font-medium text-gray-900'>
+                      React Table
+                    </h2>
+                  </div>
+                  <div className='flex-grow'>
+                    <p className='text-base leading-relaxed'>
+                      Basic React Table
+                    </p>
+                    <Link href='./tablepage'>
+                      <a className='mt-3 inline-flex items-center text-indigo-500'>
+                        Example
+                        <svg
+                          fill='none'
+                          stroke='currentColor'
+                          className='ml-2 ml-2 h-4 h-4 w-4 w-4 animate-ping'
+                          viewBox='0 0 24 24'
+                        >
+                          <path d='M5 12h14M12 5l7 7-7 7'></path>
+                        </svg>
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
