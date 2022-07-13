@@ -1,5 +1,5 @@
 import React from 'react';
-import { Column, useSortBy, useTable } from 'react-table';
+import { Column, HeaderGroup, useSortBy, useTable } from 'react-table';
 
 export default function TableContainer(
   { columns, data } = {
@@ -22,21 +22,21 @@ export default function TableContainer(
   console.log(getTableBodyProps());
 
   // eslint-disable-next-line
-  function generateSortingIndicator({ column }: { column: any }) {
-    return column.isSorted ? (column.isSortedDesc ? ' ↑ ' : ' ↓ ') : '';
+  function generateSortingIndicator(column: HeaderGroup<any>) {
+    return column.isSorted ? (column.isSortedDesc ? '↑' : '↓') : '';
   }
+
   return (
     <table className='uppercase' {...getTableProps()}>
       <thead>
         {headerGroups.map((headerGroup) => (
-          // eslint-disable-next-line react/jsx-key
+          // eslint-disable-next-line
           <tr className='bg-gray-400' {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
-              // <th className="border-2 border-black p-2" {...column.getHeaderProps()}>{column.render("Header")}</th>
-              // eslint-disable-next-line react/jsx-key
+              // eslint-disable-next-line
               <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                 {column.render('Header')}
-                {generateSortingIndicator({ column: { column: column } })}
+                {generateSortingIndicator(column)}
               </th>
             ))}
           </tr>
@@ -49,8 +49,8 @@ export default function TableContainer(
             // eslint-disable-next-line react/jsx-key
             <tr className='bg-gray-200' {...row.getRowProps()}>
               {row.cells.map((cell) => {
-                // eslint-disable-next-line react/jsx-key
                 return (
+                  // eslint-disable-next-line react/jsx-key
                   <td
                     className='border-2 border-black p-2'
                     {...cell.getCellProps()}
