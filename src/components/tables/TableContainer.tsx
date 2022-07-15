@@ -7,7 +7,7 @@ import {
   useTable,
 } from 'react-table';
 
-import { DefaultColumnFilter, Filter } from './filters';
+import { DefaultColumnFilter, Filter } from './Filters';
 
 export default function TableContainer(
   { columns, data } = {
