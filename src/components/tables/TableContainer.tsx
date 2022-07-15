@@ -1,5 +1,13 @@
 import React from 'react';
-import { Column, HeaderGroup, useSortBy, useTable } from 'react-table';
+import {
+  Column,
+  HeaderGroup,
+  useFilters,
+  useSortBy,
+  useTable,
+} from 'react-table';
+
+import { DefaultColumnFilter, Filter } from './filters';
 
 export default function TableContainer(
   { columns, data } = {
@@ -13,7 +21,9 @@ export default function TableContainer(
       {
         columns,
         data,
+        defaultColumn: { Filter: DefaultColumnFilter },
       },
+      useFilters,
       useSortBy
     );
   // eslint-disable-next-line no-console
@@ -27,16 +37,19 @@ export default function TableContainer(
   }
 
   return (
-    <table className='uppercase' {...getTableProps()}>
+    <table className='text-xs uppercase' {...getTableProps()}>
       <thead>
         {headerGroups.map((headerGroup) => (
           // eslint-disable-next-line
           <tr className='bg-gray-400' {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
               // eslint-disable-next-line
-              <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                {column.render('Header')}
-                {generateSortingIndicator(column)}
+              <th {...column.getHeaderProps()}>
+                <div {...column.getSortByToggleProps()}>
+                  {column.render('Header')}
+                  {generateSortingIndicator(column)}
+                </div>
+                <Filter column={column} />
               </th>
             ))}
           </tr>

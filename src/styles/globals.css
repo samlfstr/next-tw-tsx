@@ -10,6 +10,18 @@ body,
 main {
   height: 100%;
 }
+
+table {
+  position: absolute;
+  top: 0;
+  width: 90em;
+}
+
+th,
+td {
+  width: 20em !important;
+}
+
 /* Tailwind Components*/
 .light-btn {
   @apply inline-block

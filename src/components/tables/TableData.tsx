@@ -24,7 +24,18 @@ export default function TableData() {
       // If the response is successful
       if (response) {
         const result = response.data.results;
-        setData(result);
+
+        const fetched = result.map((item) => {
+          return {
+            title: item.name.title,
+            first: item.name.first,
+            last: item.name.last,
+            email: item.email,
+            city: item.location.city,
+            date: item.dob.date.split('T')[0],
+          };
+        });
+        setData(fetched);
       }
     };
     fetchData();
@@ -33,15 +44,15 @@ export default function TableData() {
   const headers = [
     {
       Header: 'Title',
-      accessor: 'name.title',
+      accessor: 'title',
     },
     {
       Header: 'First Name',
-      accessor: 'name.first',
+      accessor: 'first',
     },
     {
       Header: 'Last Name',
-      accessor: 'name.last',
+      accessor: 'last',
     },
     {
       Header: 'Email',
@@ -49,7 +60,11 @@ export default function TableData() {
     },
     {
       Header: 'City',
-      accessor: 'location.city',
+      accessor: 'city',
+    },
+    {
+      Header: 'Date',
+      accessor: 'date',
     },
   ];
   // eslint-disable-next-line
